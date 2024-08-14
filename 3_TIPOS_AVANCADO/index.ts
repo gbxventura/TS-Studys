@@ -110,5 +110,74 @@ showUserRole(false);
 showUserRole('Admin');
 
 /* =================>
- 12 - 
+ 12 - Type alias
+<================= */
+type ID = string | number;
+
+function showId(id: ID) {
+  console.log(`O ID é: ${id}`);
+}
+showId(1);
+showId('200');
+
+/* =================>
+ 13 - Introdução às interfaces
+<================= */
+interface Point {
+  x: number;
+  y: number;
+  z: number;
+}
+function showCoords(obj: Point) {
+  console.log(`X: ${obj.x} Y: ${obj.y} Z: ${obj.z}`);
+}
+const coordsObj: Point = {
+  x: 10,
+  y: 15,
+  z: 20,
+};
+showCoords(coordsObj);
+
+/* =================>
+ 14 - Type alias x Interface
+<================= */
+interface Person {
+  name: string;
+}
+
+interface Person {
+  age: number;
+}
+
+const somePerson: Person = { name: 'Gabriel', age: 21 };
+console.log(somePerson);
+
+type personType = {
+  name: string;
+};
+// erro, não pode fazer modificação
+// type personType{
+//   age:number
+// }
+
+/* =================>
+ 15 - Literal types
+<================= */
+let test: 'testando';
+test = 'testando';
+console.log(test);
+//
+function showDirection(direction: 'left' | 'right' | 'center') {
+  console.log(`A direção é: ${direction}`);
+}
+showDirection('left');
+
+/* =================>
+ 16 - Non-null Assertion Operator (!)
+<================= */
+const p = document.getElementById('some-p');
+console.log(p!.innerHTML);
+
+/* =================>
+ 17 - Bigint
 <================= */

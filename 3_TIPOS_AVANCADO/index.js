@@ -53,3 +53,55 @@ var pessoaObj = {
     nome: 'Matheus',
     surname: 'Battisti',
 };
+/* =================>
+ 8 - Props opicionais
+<================= */
+function showNumbers(a, b, c) {
+    console.log('A : ' + a);
+    console.log('B : ' + b);
+    if (c) {
+        console.log('C: ' + c);
+    }
+}
+console.log(1, 2, 3);
+console.log(4, 5);
+/* =================>
+ 9 - Validação de props opcionais
+<================= */
+function advancedGreeting(firstName, lastName) {
+    if (lastName !== undefined) {
+        console.log("Ol\u00E1, ".concat(firstName, " ").concat(lastName, ", tudo bom?"));
+    }
+    else {
+        console.log("Ol\u00E1, ".concat(firstName, ", tudo bem?"));
+    }
+}
+console.log(advancedGreeting('Gabriel', 'Ventura'));
+console.log(advancedGreeting('Gabriel'));
+/* =================>
+ 10 - Union types
+<================= */
+function showBalance(balance) {
+    console.log("O saldo da conta \u00E9: R$ ".concat(balance));
+}
+console.log(100);
+console.log('500');
+/* =================>
+ 11 - Avançando em Union types
+<================= */
+function showUserRole(role) {
+    if (typeof role === 'boolean') {
+        return 'Usuário não aprovado!';
+    }
+    return "A fun\u00E7\u00E3o do usu\u00E1rio \u00E9? ".concat(role);
+}
+showUserRole(false);
+showUserRole('Admin');
+function showId(id) {
+    console.log("O ID \u00E9: ".concat(id));
+}
+showId(1);
+showId('200');
+/* =================>
+ 13 -
+<================= */
